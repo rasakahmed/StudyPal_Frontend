@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:wght@400;600;700&family=Geist:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-family: Geist, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --paper: #f5f0e8;
+  --ink: #0f0e0d;
+  --accent: #c84b2f;
+  --border: #c8b89a;
+  --color-text-tertiary: rgba(15, 14, 13, 0.55);
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.dark body {
+  background: #0f172a;
+}
+
+.ql-toolbar,
+.ql-container {
+  border-color: rgb(226 232 240) !important;
+}
+
+.dark .ql-toolbar,
+.dark .ql-container {
+  border-color: rgb(55 65 81) !important;
+  color: rgb(243 244 246);
+}
+
+.fc .fc-button-primary {
+  background: #4f46e5;
+  border-color: #4f46e5;
+}
+
+@layer components {
+  .card {
+    @apply rounded-3xl border p-5 transition duration-200;
+    border-color: var(--border);
+    background: #ffffff;
+  }
+
+  .input {
+    @apply w-full rounded-xl border px-4 py-3 text-sm outline-none focus:ring-2;
+    border-color: var(--border);
+    background: #ffffff;
+    color: var(--ink);
+    box-shadow: none;
+    ring-color: rgba(200, 75, 47, 0.2);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-white transition;
+    background: var(--accent);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-semibold transition;
+    border-color: var(--border);
+    background: #fff2df;
+    color: var(--ink);
+  }
+}
